@@ -173,7 +173,7 @@ defmodule Torch.Pagination do
     do: collection
 
   defp collect_attributes_by_type(attr, attr_type, collection)
-       when attr_type in [:integer, :number] do
+       when attr_type in [:integer, :number, :id] do
     Map.update(collection, :number, [attr], fn curr_value -> [attr | curr_value] end)
   end
 
